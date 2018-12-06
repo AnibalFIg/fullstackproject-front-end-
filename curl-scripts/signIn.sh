@@ -1,6 +1,6 @@
-curl "http://tic-tac-toe.wdibos.com" \
+curl "http://localhost:4741/sign-in" \
   --include \
-  --request POST \
+  --request GET \
   --header "Content-Type: application/json" \
   --data '{
     "credentials": {

@@ -4,8 +4,10 @@ const getFormFields = require('../../../lib/get-form-fields.js')
 const api = require('./api.js')
 const ui = require('./ui.js')
 const store = require('../store.js')
+console.log(store)
 
 const onSignUp = event => {
+  console.log()
   event.preventDefault()
   const data = getFormFields(event.target)
   api.signUp(data)
@@ -28,25 +30,19 @@ const onChangePassword = event => {
     .then(ui.changePasswordSuccess)
     .catch(ui.changePasswordFailure)
 }
+
 const onSignOut = event => {
   event.preventDefault()
-  api.signOut()
+  const data = getFormFields(event.target)
+  api.signOut(data)
     .then(ui.signOutSuccess)
     .catch(ui.signOutFailure)
 }
 
-const sendToServer = function () {
-  const index = $(event.target).attr('id')
-}
-
-const serverData = {
-  game: {
-    cell: {
-      index: index,
-      value: value;
-    },
-    over: over;
-  }
+const onSearch = event => {
+  event.preventDefault()
+  const data = 'heroes_information.csv'
+  api.search(data)
 }
 console.log()
 
@@ -55,5 +51,5 @@ module.exports = {
   onSignIn,
   onChangePassword,
   onSignOut,
-  sendToServer
+  onSearch
 }

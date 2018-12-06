@@ -8,3 +8,15 @@
   background-color: #abd1bb;
   font-family: Arial, sans-serif;
 }
+
+.main {
+  max-width: 500px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.input[type="text"] {
+  width: 90%;
+  padding: 12px;
+  font-size: 17px;
+}

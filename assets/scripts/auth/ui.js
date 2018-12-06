@@ -6,8 +6,8 @@ const signUpSuccess = data => {
   $('#message').text('Signed up successfully') // .text() method allows us to set its text in the html
   $('#message').removeClass()
   $('#message').addClass('success')
-  document.getElementById('sign-up').reset()
   $('#change-password').hide()
+  document.getElementById('sign-up').reset()
 }
 
 const signInSuccess = data => {
@@ -17,9 +17,7 @@ const signInSuccess = data => {
   $('#message').addClass('success')
   $('#sign-up').hide()
   $('#sign-in').hide()
-  $('#change-password').show()
-  $('#create-game').show()
-  $('#previousGames').show()
+  document.getElementById('sign-in').reset()
 }
 
 const signUpFailure = data => {
@@ -64,20 +62,18 @@ const signOutSuccess = data => {
   $('#message').text('Logged Out Successfully')
   $('#message').removeClass()
   $('#message').addClass('success')
-  $('#board-container').empty()
   $('#sign-up').show()
   $('#sign-in').show()
-  $('.msg').hide()
-  $('#board-container').empty()
-  $('.box').hide()
-  $('#sign-out').hide()
-  $('.box').html('')
-  $('#restartGame').hide()
-  $('#create-game').hide()
-  $('#previousGames').hide()
   document.getElementById('sign-in').reset()
 }
 
+const searchBarSuccess = data => {
+  store.user = data.user
+  $('#message').text('Successfull Search')
+  $('#message').removeClass()
+  $('#message').addClass('success')
+  document.getElementById('search').reset()
+}
 
 module.exports = {
   signUpSuccess,
@@ -88,4 +84,5 @@ module.exports = {
   changePasswordFailure,
   signOutFailure,
   signOutSuccess,
+  searchBarSuccess
 }

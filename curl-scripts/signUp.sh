@@ -1,4 +1,4 @@
-curl "http://tic-tac-toe.wdibos.com" \
+curl "http://localhost:4741/sign-up" \
   --include \
   --request POST \
   --header "Content-Type: application/json" \
