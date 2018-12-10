@@ -2,6 +2,20 @@
 <html>
     <head>
       <title>Super Hero Search</title>
+
+      <style>
+         html {
+          height: 100%;
+          margin: 0;
+          position: relative;
+          opacity: 0.65;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          background: url('/Users/figgy/downloads/browser-template-master/assets/styles/ComicKapow.jpg')
+        }
+      </style>
+
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -11,11 +25,48 @@
       <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
       <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
     </head>
+
+
     <body>
 
-      <header><h1>Super Hero Compendium</h1></header>
+      <!-- <img src="styles/ComicKapow.jpg" id="bg" alt=""> -->
 
-      <form id="sign-up" class="border">
+      <header>
+
+        <h1>Super Hero Compendium</h1>
+
+        <!-- <div id="hero">
+          <div id="hero-overlay"></div>
+        </div> -->
+
+        <div class="container">
+          <nav>
+            <ul>
+              <li>
+                <li><a href="#"><button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal1">
+                  Sign Up
+                </button></a></li>
+                <li><a href="#"><button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal2">
+                  Sign In
+                </button></a></li>
+                <li><a href="#"><button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal3">
+                  Change Password
+                </button></a></li>
+                <li><a href="#"><button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal4">
+                  Sign Out
+                </button></a></li>
+              </li>
+            </ul>
+
+          </nav>
+          <!-- <div class="hero"></div> -->
+
+        </div>
+
+          <!-- <style>
+            background-image: url("/styles/ComicKapow.jpg");
+          </style> -->
+      <!-- <form id="sign-up" class="border">
       <fieldset>
         <legend>Sign Up</legend>
         <input type="text" name="credentials[email]" placeholder="Email" />
@@ -23,18 +74,18 @@
         <input type="password" name="credentials[password_confirmation]" placeholder="Confirm" />
         <input type="submit" value="Sign up!" />
       </fieldset>
-    </form>
+    </form> -->
 
-    <form id="sign-in" class="border">
+    <!-- <form id="sign-in" class="border">
       <fieldset>
         <legend>Sign In</legend>
         <input type="text" name="credentials[email]" placeholder="Email" />
         <input type="password" name="credentials[password]" placeholder="Password" />
         <input type="submit" value="Sign in!" />
       </fieldset>
-    </form>
+    </form> -->
 
-    <form id="change-password" class="border">
+    <!-- <form id="change-password" class="border">
       <fieldset>
         <legend>Change Password</legend>
         <input type="text" name="credentials[email]" placeholder="Email" />
@@ -42,20 +93,224 @@
         <input type="password" name="passwords[new]" placeholder="New Password">
         <input type="submit" value="Change Password!">
       </fieldset>
-    </form>
+    </form> -->
 
-    <form id="sign-out" class="border">
+    <!-- <form id="sign-out" class="border">
       <fieldset>
         <legend>Sign Out</legend>
         <input type="submit" value="Sign Out"/>
       </fieldset>
-    </form>
+    </form> -->
+    </header>
 
-    <div class ="main>"
-      <form action ="/User/figgy/wdi/projects/Comic-BookApi/ComicBookApi/lib/seeds/heroes_information.csv" target="_blank" method="get">
+    <h3>
+    <div class = "main">
+      <form action ="/User/figgy/wdi/projects/Comic-BookApi/ComicBookApi/lib/seeds/heroes_information.csv" target="_blank" method="GET">
     <input type ="text" name ="text" class ="search" placeholder ="Search Here">
     <input type ="submit" name ="submit" class ="submit" value ="Search">
       </form>
     </div>
+  </h3>
+
+
+  <h2>
+    <button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal">
+      Add To The Compendium
+    </button>
+  </h2>
+
+    <div class="modal fade" id="mymodal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2> Add A Hero/Villain</h2>
+          </div>
+          <div class="modal-body">
+            <form id= 'onCreateHeroVillain'>
+              <ul>
+              <li>
+                <label> Hero/Villain </label>
+              <input type='text' name='hero[title]' placeholder='Title'/>
+             </li>
+             <li>
+              <label>  Gender </label>
+              <input type='text' name='hero[gender]' placeholder='Gender'/>
+            </li>
+            <li>
+              <label>  Eye Color </label>
+              <input type='text' name='hero[eye_color]' placeholder='Eye Color'/>
+            </li>
+            <li>
+              <label>  Race </label>
+              <input type='text' name='hero[race]' placeholder='Race'/>
+            </li>
+            <li>
+              <label>  Hair Color </label>
+              <input type='text' name='hero[hair_color]' placeholder='Hair Color'/>
+            </li>
+            <li>
+              <label>  Height </label>
+              <input type='text' name='hero[height]' placeholder='Height'/>
+            </li>
+            <li>
+              <label>  Publisher </label>
+              <input type='text' name='hero[publisher]' placeholder='Publisher'/>
+            </li>
+            <li>
+              <label>  Skin Color </label>
+              <input type='text' name='hero[skin_color]' placeholder='Skin Color'/>
+            </li>
+            <li>
+              <label>  Alignment </label>
+              <input type='text' name='hero[alignment]' placeholder='Alignment'/>
+            </li>
+            <li>
+              <label>  Weight </label>
+              <input type='text' name='book[weight]' placeholder='Weight'/>
+            </li>
+              <input type='submit' value="Add Hero/Villain">
+            </ul>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dimiss="modal">Close</button>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal1">
+      Sign Up
+    </button> -->
+    <div class="modal fade" id="mymodal1">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Sign Up Now</h2>
+          </div>
+          <div class="modal-body">
+            <form id="sign-up" class="border">
+            <fieldset>
+              <legend>Sign Up</legend>
+              <input type="text" name="credentials[email]" placeholder="Email" />
+              <input type="password" name="credentials[password]" placeholder="Password" />
+              <input type="password" name="credentials[password_confirmation]" placeholder="Confirm" />
+              <input type="submit" value="Sign up!" />
+            </fieldset>
+          </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dimiss="modal">Close</button>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal3">
+      Change Password
+    </button> -->
+    <div class="modal fade" id="mymodal3">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Change Password</h2>
+          </div>
+          <div class="modal-body">
+            <form id="change-password" class="border">
+              <fieldset>
+                <legend>Change Password</legend>
+                <input type="text" name="credentials[email]" placeholder="Email" />
+                <input type="password" name="passwords[old]" placeholder="Old Password">
+                <input type="password" name="passwords[new]" placeholder="New Password">
+                <input type="submit" value="Change Password!">
+              </fieldset>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dimiss="modal">Close</button>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal2">
+      Sign In
+    </button> -->
+    <div class="modal fade" id="mymodal2">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Sign In</h2>
+          </div>
+          <div class="modal-body">
+            <form id="sign-in" class="border">
+              <fieldset>
+                <legend>Sign In</legend>
+                <input type="text" name="credentials[email]" placeholder="Email" />
+                <input type="password" name="credentials[password]" placeholder="Password" />
+                <input type="submit" value="Sign in!" />
+              </fieldset>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dimiss="modal">Close</button>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <button type="button" class="btn btn-primay" data-toggle="modal" data-target="#mymodal4">
+      Sign Out
+    </button> -->
+    <div class="modal fade" id="mymodal4">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2>Sign Out</h2>
+          </div>
+          <div class="modal-body">
+            <form id="sign-out" class="border">
+              <fieldset>
+                <legend>Sign Out</legend>
+                <input type="submit" value="Sign Out"/>
+              </fieldset>
+            </form>
+          </div>
+          <!-- <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dimiss="modal">Close</button>
+          </div> -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- <h2> Add A Hero/Villain</h2>
+      <form id= 'onCreateHeroVillain'>
+        <label> Hero/Villain </label>
+        <input type='text' name='hero[title]' placeholder='Title'/>
+        <label>  Gender </label>
+        <input type='text' name='hero[gender]' placeholder='Gender'/>
+        <label>  Eye Color </label>
+        <input type='text' name='hero[eye_color]' placeholder='Eye Color'/>
+        <label>  Race </label>
+        <input type='text' name='hero[race]' placeholder='Race'/>
+        <label>  Hair Color </label>
+        <input type='text' name='hero[hair_color]' placeholder='Hair Color'/>
+        <label>  Height </label>
+        <input type='text' name='hero[height]' placeholder='Height'/>
+        <label>  Publisher </label>
+        <input type='text' name='hero[publisher]' placeholder='Publisher'/>
+        <label>  Skin Color </label>
+        <input type='text' name='hero[skin_color]' placeholder='Skin Color'/>
+        <label>  Alignment </label>
+        <input type='text' name='hero[alignment]' placeholder='Alignment'/>
+        <label>  Weight </label>
+        <input type='text' name='book[weight]' placeholder='Weight'/>
+        <input type='submit' value="Add Hero/Villain">
+      </form> -->
     </body>
 </html>

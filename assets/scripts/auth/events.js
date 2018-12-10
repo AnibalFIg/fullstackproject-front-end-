@@ -41,15 +41,26 @@ const onSignOut = event => {
 
 const onSearch = event => {
   event.preventDefault()
-  const data = 'heroes_information.csv'
+  const data = getFormFields('heroes_information.csv')
   api.search(data)
 }
 console.log()
+
+const onCreateHeroVillain = function (event) {
+  // prevent default reload of page
+  console.log('got into onCreateHeroVillain...about to prevent default')
+  event.preventDefault()
+  const data = getFormFields(event.target)
+  api.createHeroVillain(data)
+    .then(ui.createHeroVillainSuccess)
+    .catch(ui.createHeroVillainFailure)
+}
 
 module.exports = {
   onSignUp,
   onSignIn,
   onChangePassword,
   onSignOut,
-  onSearch
+  onSearch,
+  onCreateHeroVillain
 }

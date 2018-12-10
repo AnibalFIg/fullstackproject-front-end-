@@ -13,5 +13,6 @@ $(() => {
   $('#sign-in').on('submit', events.onSignIn)
   $('#sign-out').on('submit', events.onSignOut)
   $('#change-password').on('submit', events.onChangePassword)
+  $('#createherovillain').on('submit', events.onCreateHeroVillain)
   $('#search').on('submit', events.onSearch)
 })

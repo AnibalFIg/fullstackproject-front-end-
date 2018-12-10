@@ -55,6 +55,7 @@ const signOutFailure = data => {
   $('#message').text('Error Logging Out')
   $('#message').removeClass()
   $('#message').addClass('failure')
+  document.getElementById('sign-out').reset()
 }
 
 const signOutSuccess = data => {
@@ -65,6 +66,12 @@ const signOutSuccess = data => {
   $('#sign-up').show()
   $('#sign-in').show()
   document.getElementById('sign-in').reset()
+}
+
+const createHeroVillainSuccessResponse = data => {
+  store.user = data.user
+  $('#message').text('Hero/Villain Was Successfully Added.')
+  $('message').addClass('success')
 }
 
 const searchBarSuccess = data => {
@@ -84,5 +91,6 @@ module.exports = {
   changePasswordFailure,
   signOutFailure,
   signOutSuccess,
-  searchBarSuccess
+  searchBarSuccess,
+  createHeroVillainSuccessResponse
 }

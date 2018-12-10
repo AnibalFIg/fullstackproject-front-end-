@@ -40,9 +40,18 @@ const signOut = function () {
   })
 }
 
+const createHeroVillainApi = function (data) {
+  return $.ajax({
+    url: config.apiUrl + `/createherovillain`,
+    method: 'POST',
+    data: data
+  })
+}
+
 module.exports = {
   signUp,
   signIn,
   signOut,
-  changePassword
+  changePassword,
+  createHeroVillainApi
 }
